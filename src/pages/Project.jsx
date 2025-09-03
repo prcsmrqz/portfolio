@@ -34,7 +34,7 @@ const Project = () => {
                 and keep track of posts you want to read, making it easy to stay engaged 
                 with your favorite topics.`,
           source: "https://github.com/prcsmrqz/ReactAsset",
-          image: "/money_tracker.png",
+          image: "/blog.png",
           bg: "bg-pink-200/80",
           darkBg: "dark:bg-pink-100",
           techStack: [
@@ -87,7 +87,7 @@ const Project = () => {
         >
           <div className="flex-shrink-0 w-full sm:w-64 h-48 sm:h-auto flex items-center justify-center mb-4 sm:mb-0">
             <img
-              src="/money_tracker.png"
+              src={item.image}
               className="w-full h-full object-cover rounded-lg"
               alt={`${item.name} logo`}
             />
