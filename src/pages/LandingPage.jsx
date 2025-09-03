@@ -33,16 +33,16 @@ const LandingPage = () => {
       <div id="prcsmrqz" className="flex justify-between gap-5 sm:gap-7">
         <a
           href="#about"
-          className="flex gap-3 text-xs md:text-xl px-5 py-4 text-white bg-black dark:bg-white dark:text-black rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110 cursor-pointer"
+          className="flex gap-2 sm:gap-3 text-xs md:text-xl px-5 py-4 text-white bg-black dark:bg-white dark:text-black rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110 cursor-pointer"
         >
-          <FaUser className="text-xl md:text-2xl" />
+          <FaUser className="text-base md:text-2xl" />
           About Me
         </a>
         <a
           href="#contact"
-          className="flex gap-3 text-xs md:text-xl px-5 py-4 text-black bg-gray-400/20 dark:bg-gray-300/20 dark:text-white rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110 cursor-pointer"
+          className="flex gap-2 sm:gap-3 text-xs md:text-xl px-5 py-4 text-black bg-gray-400/20 dark:bg-gray-300/20 dark:text-white rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110 cursor-pointer"
         >
-          <BiMessageRoundedDetail className="text-xl md:text-3xl" />
+          <BiMessageRoundedDetail className="text-base md:text-3xl" />
           Contact
         </a>
       </div>

@@ -13,7 +13,12 @@ const Contact = () => {
 
       <div className=" flex justify-center items-center">
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-5 md:gap-5 lg:gap-10 w-full px-4 sm:px-10 mt-10">
-          <div className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=prcsmrqz09@gmail.com&su=Hello&body=Send%20me%20a%20message."
+            target="_blank"
+            className="flex items-center gap-4 cursor-pointer hover:underline
+            dark:text-white"
+          >
             <CiMail className="text-4xl sm:text-6xl stroke-1" />
             <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
               <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
@@ -23,9 +28,13 @@ const Contact = () => {
                 prcsmrqz09@gmail.com
               </h1>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white">
+          <a
+            href="https://www.linkedin.com/in/prcsmrqz"
+            target="_blank"
+            className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
+          >
             <FaLinkedin className="text-4xl sm:text-6xl stroke-1" />
             <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
               <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
@@ -35,10 +44,14 @@ const Contact = () => {
                 prcsmrqz09@gmail.com
               </h1>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white">
-            <FaGithub className="text-3xl sm:text-6xl stroke-1" />
+          <a
+            href="https://github.com/prcsmrqz"
+            target="_blank"
+            className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
+          >
+            <FaGithub className="text-4xl sm:text-6xl stroke-1" />
             <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
               <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                 My Github account.
@@ -47,9 +60,13 @@ const Contact = () => {
                 github.com/prcsmrqz
               </h1>
             </div>
-          </div>
+          </a>
 
-          <div className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white">
+          <a
+            href="https://www.facebook.com/prcsmrqz"
+            target="_blank"
+            className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
+          >
             <FaFacebookSquare className="text-4xl sm:text-6xl stroke-1" />
             <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
               <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
@@ -59,7 +76,7 @@ const Contact = () => {
                 facebook.com/prcsmrqz
               </h1>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </>
