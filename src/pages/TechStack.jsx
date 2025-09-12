@@ -103,7 +103,11 @@ const TechStack = () => {
   ];
   return (
     <>
-      <h1 className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5 leading-tight">
+      <h1
+        data-aos="fade-down"
+        data-aos-delay="100"
+        className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5 leading-tight"
+      >
         Technology Stack
       </h1>
       <hr className="w-36 h-1 mx-auto my-2 bg-[#BFBFBF] border-0 rounded-sm md:my-10 dark:bg-gray-400" />
@@ -113,6 +117,8 @@ const TechStack = () => {
           const Logo = item.logo;
           return (
             <div
+              data-aos="flip-right"
+              data-aos-delay="200"
               key={item.name}
               className={`group bg-neutral-100 ${item.hoverBgColor} ${item.color} hover:text-white p-5 rounded-md border-b-2 border-neutral-400/50 dark:border-b-4 dark:border-neutral-500/70 shadow-b shadow-lg flex flex-col items-center transition-transform duration-300 ease-in-out transform hover:scale-110 cursor-pointer`}
             >

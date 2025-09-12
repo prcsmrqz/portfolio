@@ -14,4 +14,34 @@ html.dark {
 html {
   font-family: "Poppins", sans-serif;
   @apply scroll-smooth;
+  margin: 0;
+}
+@keyframes drift {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateX(20px) scale(1.05);
+  }
+  50% {
+    transform: translateX(-20px) scale(0.95);
+  }
+  75% {
+    transform: translateX(10px) scale(1.02);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+.animate-drift {
+  animation: drift 15s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }

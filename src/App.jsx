@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./App.css";
 import Nav from "./pages/Nav";
 import LandingPage from "./pages/LandingPage";
@@ -17,22 +18,38 @@ function App() {
     else root.classList.remove("dark");
   }, [isDarkMode]);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+      once: false,
+    });
+  }, []);
+
   return (
     <>
-      <main className="min-h-screen py-5">
-        <div className=" mx-auto px-6 lg:px-2">
-          <nav className="sticky top-0 z-50 flex justify-between items-center border-b border-gray-400 dark:border-gray-500 pb-3 pt-3 lg:px-64 bg-gray-50 dark:bg-neutral-950">
+      <main className="min-h-screen ">
+        <div className=" mx-auto px-6 lg:px-0">
+          <nav
+            data-aos="fade-down"
+            className="sticky top-0 z-50 flex justify-between items-center border-b border-gray-400 dark:border-gray-500 pb-3 pt-3 lg:px-64 bg-gray-50 dark:bg-neutral-950"
+          >
             <Nav isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
           </nav>
 
           <div
             id="prcsmrqz"
-            className="px-2 flex flex-col justify-center items-center text-center mt-10 sm:-mt-10 sm:min-h-[calc(100vh-64px)] scroll-mt-20"
+            className="relative px-2 flex flex-col justify-center items-center text-center mt-10 sm:-mt-10 sm:min-h-[calc(100vh-64px)] scroll-mt-20 overflow-hidden"
           >
             <LandingPage />
           </div>
 
+          <div className="absolute top-0 left-[20%] w-80 h-80 bg-pink-300 rounded-full opacity-40 animate-drift filter blur-3xl -z-10"></div>
+          <div className="absolute bottom-0 left-[0%] w-72 h-72 bg-purple-300 rounded-full opacity-35 animate-drift animation-delay-2000 filter blur-2xl -z-10"></div>
+          <div className="absolute bottom-0 left-[85%] top-[70%] w-60 h-80 bg-blue-300 rounded-full opacity-35 animate-drift animation-delay-4000 filter blur-3xl -z-10"></div>
+
           <div
+            data-aos="fade-down"
+            data-aos-delay="200"
             id="about"
             className="px-2 flex flex-col justify-center items-center text-center mt-30 sm:mt-15 px-6 scroll-mt-25"
           >

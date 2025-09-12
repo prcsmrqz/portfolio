@@ -6,7 +6,11 @@ import { FaGithub } from "react-icons/fa";
 const Contact = () => {
   return (
     <>
-      <h1 className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5 leading-tight">
+      <h1
+        data-aos="fade-down"
+        data-aos-delay="100"
+        className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5 leading-tight"
+      >
         Contact
       </h1>
       <hr className="w-36 h-1  mx-auto my-2 bg-[#BFBFBF] border-0 rounded-sm md:my-10 dark:bg-gray-400"></hr>
@@ -14,6 +18,8 @@ const Contact = () => {
       <div className=" flex justify-center items-center">
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-5 md:gap-5 lg:gap-10 w-full px-4 sm:px-10 mt-10">
           <a
+            data-aos="fade-right"
+            data-aos-delay="100"
             href="https://mail.google.com/mail/?view=cm&fs=1&to=prcsmrqz09@gmail.com&su=Hello&body=Send%20me%20a%20message."
             target="_blank"
             className="flex items-center gap-4 cursor-pointer hover:underline
@@ -31,6 +37,8 @@ const Contact = () => {
           </a>
 
           <a
+            data-aos="fade-left"
+            data-aos-delay="100"
             href="https://www.linkedin.com/in/prcsmrqz"
             target="_blank"
             className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
@@ -47,6 +55,8 @@ const Contact = () => {
           </a>
 
           <a
+            data-aos="fade-right"
+            data-aos-delay="100"
             href="https://github.com/prcsmrqz"
             target="_blank"
             className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
@@ -63,6 +73,8 @@ const Contact = () => {
           </a>
 
           <a
+            data-aos="fade-left"
+            data-aos-delay="100"
             href="https://www.facebook.com/prcsmrqz"
             target="_blank"
             className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"

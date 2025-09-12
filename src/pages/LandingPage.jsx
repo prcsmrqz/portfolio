@@ -5,7 +5,11 @@ import Typewriter from "typewriter-effect";
 const LandingPage = () => {
   return (
     <>
-      <h1 className="font-bold text-6xl md:text-7xl lg:text-8xl leading-tight text-black dark:text-white mb-5 sm:mb-10">
+      <h1
+        data-aos="fade-right"
+        data-aos-delay="200"
+        className="font-bold text-6xl md:text-7xl lg:text-8xl leading-tight text-black dark:text-white mb-5 sm:mb-10"
+      >
         Hello, I'm Precious
       </h1>
       <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-6xl text-neutral-500 dark:text-zinc-400 font-medium mb-8 sm:mb-10">
@@ -25,12 +29,21 @@ const LandingPage = () => {
           }}
         />
       </h2>
-      <p className="max-w-xl text-sm md:text-base lg:text-lg dark:text-zinc-200 tracking-wide mb-10 sm:mb-15">
+      <p
+        data-aos="fade-right"
+        data-aos-delay="300"
+        className="max-w-xl text-sm md:text-base lg:text-lg dark:text-zinc-200 tracking-wide mb-10 sm:mb-15"
+      >
         I’m passionate about creating efficient, user-friendly solutions and
         continuously improving my skills to deliver high-quality software.
       </p>
 
-      <div id="prcsmrqz" className="flex justify-between gap-5 sm:gap-7">
+      <div
+        data-aos="fade-right"
+        data-aos-delay="400"
+        id="prcsmrqz"
+        className="flex justify-between gap-5 sm:gap-7"
+      >
         <a
           href="#about"
           className="flex gap-2 sm:gap-3 text-xs md:text-xl px-5 py-4 text-white bg-black dark:bg-white dark:text-black rounded-full transition-transform duration-300 ease-in-out transform hover:scale-110 cursor-pointer"

@@ -2,7 +2,11 @@ import { FaGithub } from "react-icons/fa";
 const Project = () => {
   return (
     <>
-      <h1 className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5 leading-tight">
+      <h1
+        data-aos="fade-down"
+        data-aos-delay="100"
+        className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5 leading-tight"
+      >
         Project
       </h1>
       <hr className="w-36 h-1 mx-auto my-2 bg-[#BFBFBF] border-0 rounded-sm md:my-10 dark:bg-gray-400"></hr>
@@ -82,6 +86,7 @@ const Project = () => {
         },
       ].map((item) => (
         <div
+          data-aos="zoom-in"
           key={item.name}
           className={`${item.bg} ${item.darkBg} flex flex-col sm:flex-row mb-5 max-w-4xl p-6 border-t-4 border-neutral-400/50 dark:border-neutral-500/60 shadow-b shadow-md w-full rounded-md mt-10 sm:mt-5 transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer`}
         >
