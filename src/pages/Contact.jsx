@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { CiMail } from "react-icons/ci";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -11,14 +12,27 @@ import Swal from "sweetalert2";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xgvlbaer");
-  if (state.succeeded) {
-    Swal.fire({
-      title: "Success!",
-      text: "Your message was submitted.",
-      icon: "success",
-      confirmButtonText: "OK",
-    });
-  }
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+
+      Swal.fire({
+        title: "Success!",
+        text: "Your message was submitted.",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+    }
+  }, [state.succeeded]);
+
   return (
     <>
       <h1
@@ -29,7 +43,7 @@ const Contact = () => {
         Contact
       </h1>
       <hr className="w-36 h-1  mx-auto my-2 bg-[#BFBFBF] border-0 rounded-sm md:my-10 dark:bg-gray-400"></hr>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10 md:mt-10">
         <div
           data-aos="fade-right"
           data-aos-delay="100"
@@ -75,7 +89,7 @@ const Contact = () => {
               target="_blank"
               className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
             >
-              <FaGithub className="text-4xl sm:text-6xl stroke-1" />
+              <FaGithub className="text-2xl sm:text-6xl stroke-1" />
               <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
                 <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                   My Github account.
@@ -122,9 +136,10 @@ const Contact = () => {
                 <MdEmail className="w-auto h-6" />
                 <input
                   id="name"
-                  type="name"
                   name="name"
                   placeholder="Your full name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="text-xs sm:text-base w-full focus:outline-none"
                 />
               </div>
@@ -134,6 +149,7 @@ const Contact = () => {
                 errors={state.errors}
               />
             </div>
+
             <div className="flex flex-col mb-5">
               <label
                 htmlFor="email"
@@ -148,6 +164,8 @@ const Contact = () => {
                   type="email"
                   name="email"
                   placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="text-xs sm:text-base w-full focus:outline-none"
                 />
               </div>
@@ -157,6 +175,7 @@ const Contact = () => {
                 errors={state.errors}
               />
             </div>
+
             <div className="flex flex-col mb-5">
               <label
                 htmlFor="subject"
@@ -168,9 +187,10 @@ const Contact = () => {
                 <MdSubject className="w-auto h-6" />
                 <input
                   id="subject"
-                  type="subject"
                   name="subject"
                   placeholder="Project inquiry, collaboration, etc."
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                   className="text-xs sm:text-base w-full focus:outline-none"
                 />
               </div>
@@ -180,6 +200,7 @@ const Contact = () => {
                 errors={state.errors}
               />
             </div>
+
             <div className="flex flex-col mb-5">
               <label
                 htmlFor="message"
@@ -191,15 +212,16 @@ const Contact = () => {
                 <CiChat2 className="w-auto h-6" />
                 <textarea
                   id="message"
-                  type="message"
                   name="message"
                   placeholder="Tell me about your project, requirements, timeline, budget, etc."
                   rows="3"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="text-xs sm:text-base w-full focus:outline-none "
                 ></textarea>
               </div>
               <ValidationError
-                prefix="message"
+                prefix="Message"
                 field="message"
                 errors={state.errors}
               />
