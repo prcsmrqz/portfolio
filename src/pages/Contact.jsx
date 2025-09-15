@@ -54,15 +54,14 @@ const Contact = () => {
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=prcsmrqz09@gmail.com&su=Hello&body=Send%20me%20a%20message."
               target="_blank"
-              className="flex items-center gap-4 cursor-pointer hover:underline
-            dark:text-white"
+              className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
             >
               <CiMail className="text-4xl sm:text-6xl stroke-1" />
               <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
                 <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                   Send me an email.
                 </h4>
-                <h1 className="font-bold text-sm sm:text-base">
+                <h1 className="font-bold text-xs sm:text-base">
                   prcsmrqz09@gmail.com
                 </h1>
               </div>
@@ -78,7 +77,7 @@ const Contact = () => {
                 <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                   My LinkedIn account.
                 </h4>
-                <h1 className="font-bold text-sm sm:text-base">
+                <h1 className="font-bold text-xs sm:text-base">
                   prcsmrqz09@gmail.com
                 </h1>
               </div>
@@ -89,12 +88,12 @@ const Contact = () => {
               target="_blank"
               className="flex items-center gap-4 cursor-pointer hover:underline dark:text-white"
             >
-              <FaGithub className="text-2xl sm:text-6xl stroke-1" />
+              <FaGithub className="text-md sm:text-6xl stroke-1" />
               <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
                 <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                   My Github account.
                 </h4>
-                <h1 className="font-bold text-sm sm:text-base">
+                <h1 className="font-bold text-xs sm:text-base">
                   github.com/prcsmrqz
                 </h1>
               </div>
@@ -110,7 +109,7 @@ const Contact = () => {
                 <h4 className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                   My Facebook account.
                 </h4>
-                <h1 className="font-bold text-sm sm:text-base">
+                <h1 className="font-bold text-xs sm:text-base">
                   facebook.com/prcsmrqz
                 </h1>
               </div>
