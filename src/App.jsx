@@ -42,12 +42,13 @@ function App() {
           >
             <LandingPage />
           </div>
-
+          {/* 
           <div className=" overflow-hidden ">
             <div className="absolute -top-20 left-[20%] w-40 h-40 sm:w-80 sm:h-80 bg-pink-300 rounded-full opacity-40 animate-drift filter blur-3xl"></div>
             <div className="absolute bottom-60 sm:bottom-0 left-[-20%] sm:left-[0%] w-40 h-40 sm:w-72 sm:h-72 bg-purple-300 rounded-full opacity-35 animate-drift animation-delay-2000 filter blur-2xl"></div>
             <div className="absolute bottom-0 left-[70%] sm:left-[85%] top-[60%] sm:top-[70%] w-30 h-40 sm:w-60 sm:h-80 bg-blue-300 rounded-full opacity-35 animate-drift animation-delay-4000 filter blur-3xl"></div>
           </div>
+          */}
 
           <div
             data-aos="fade-down"
