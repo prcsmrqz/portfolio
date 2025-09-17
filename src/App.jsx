@@ -65,10 +65,10 @@ function App() {
             background="transparent"
             minSize={0.6}
             maxSize={1.4}
-            particleDensity={window.innerWidth < 768 ? 10 : 50}
+            particleDensity={window.innerWidth < 768 ? 3 : 50}
             className="w-full h-full"
             particleColor={isDarkMode ? "#FFFFFF" : "#5e5e5eff"}
-            fpsLimit={window.innerWidth < 768 ? 10 : 120}
+            fpsLimit={window.innerWidth < 768 ? 5 : 120}
           />
         </div>
 
