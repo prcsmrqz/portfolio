@@ -17,6 +17,7 @@ function Nav({ isDarkMode, setIsDarkMode }) {
       <div className="flex">
         <a
           href="#prcsmrqz"
+          onClick={() => setActive("#prcsmrqz")}
           className="text-[12px] sm:text-xs lg:text-xl font-black text-gray-800 dark:text-white hover:-translate-y-1.5 transition-transform transform"
         >
           {"</prcsmrqz>"}

@@ -1,6 +1,7 @@
 import { FaUser } from "react-icons/fa6";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import Typewriter from "typewriter-effect";
+import { FaArrowDown } from "react-icons/fa6";
 
 const LandingPage = () => {
   return (

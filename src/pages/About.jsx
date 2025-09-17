@@ -1,11 +1,15 @@
 const About = () => {
   return (
     <>
-      <h1 className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5">
+      <h1 className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-0">
         About Me
       </h1>
       <hr className="w-36 h-1 mx-auto my-2 bg-[#BFBFBF] border-0 rounded-sm md:my-10 dark:bg-gray-400"></hr>
-      <div className="max-w-5xl sm:text-xl mt-10 sm:mt-5">
+      <div
+        data-aos="fade-down"
+        data-aos-delay="200"
+        className="flex flex-col items-center justify-center max-w-5xl sm:text-xl mt-10 sm:mt-5 mx-auto"
+      >
         <p className="text-black dark:text-zinc-200 text-justify">
           I’m <b>Precious Marquez</b>, currently a{" "}
           <b>Junior Software Engineer</b> with{" "}

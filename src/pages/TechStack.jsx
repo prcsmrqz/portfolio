@@ -134,7 +134,7 @@ const TechStack = () => {
       <h1
         data-aos="fade-down"
         data-aos-delay="100"
-        className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-5 leading-tight"
+        className="text-5xl sm:text-6xl font-black dark:text-gray-100 mb-10 sm:mb-0 leading-tight"
       >
         Technology Stack
       </h1>
@@ -192,7 +192,7 @@ const TechStack = () => {
                 data-aos="flip-right"
                 data-aos-delay="200"
                 key={`${item.name}-${active}`}
-                className={`group bg-stone-100 dark:bg-stone-800  ${item.hoverBgColor} ${item.color} hover:text-white p-5 rounded-md border-b-2 border-neutral-400/50 dark:border-b-4 dark:border-neutral-500/70 shadow-b shadow-lg flex flex-col items-center transition-transform transition-colors duration-300 ease-in-out transform hover:scale-110 cursor-pointer`}
+                className={`group bg-gray-200/60 dark:bg-zinc-800/70  ${item.hoverBgColor} ${item.color} hover:text-white p-5 rounded-md border-b-2 border-neutral-400/50 dark:border-b-4 dark:border-neutral-500/70 shadow-b shadow-lg flex flex-col items-center transition-transform transition-colors duration-300 ease-in-out transform hover:scale-110 cursor-pointer`}
               >
                 <Logo className="h-20 w-20" />
                 <p className="font-medium mt-2 text-xs dark:text-white sm:text-base text-center text-black group-hover:text-white ">
