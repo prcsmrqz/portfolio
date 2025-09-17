@@ -52,7 +52,7 @@ export const SparklesCore = (props) => {
               color: { value: background || "#0d47a1" },
             },
             fullScreen: { enable: false, zIndex: 1 },
-            fpsLimit: window.innerWidth < 768 ? 10 : 120,
+            fpsLimit: particleDensity || 120,
             interactivity: {
               events: {
                 onClick: { enable: true, mode: "push" },
