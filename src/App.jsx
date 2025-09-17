@@ -65,7 +65,7 @@ function App() {
             background="transparent"
             minSize={0.6}
             maxSize={1.4}
-            particleDensity={50}
+            particleDensity={25}
             className="w-full h-full"
             particleColor={isDarkMode ? "#FFFFFF" : "#5e5e5eff"}
           />
