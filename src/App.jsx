@@ -27,20 +27,13 @@ function App() {
     });
   }, []);
 
-  const [particleSettings, setParticleSettings] = useState({
-    density: window.innerWidth < 768 ? 10 : 50,
-    fps: window.innerWidth < 768 ? 10 : 120,
-  });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setParticleSettings({
-        density: window.innerWidth < 768 ? 5 : 50,
-        fps: window.innerWidth < 768 ? 10 : 120,
-      });
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
   const [loading, setLoading] = useState(true);
@@ -75,18 +68,19 @@ function App() {
   return (
     <>
       <div className="relative min-h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 w-full h-full -z-10">
-          <SparklesCore
-            id="tsparticlesfullpage"
-            background="transparent"
-            minSize={0.6}
-            maxSize={1.4}
-            particleDensity={particleSettings.density}
-            className="w-full h-full"
-            particleColor={isDarkMode ? "#FFFFFF" : "#5e5e5eff"}
-            fpsLimit={particleSettings.fps}
-          />
-        </div>
+        {!isMobile && (
+          <div className="absolute inset-0 w-full h-full -z-10">
+            <SparklesCore
+              id="tsparticlesfullpage"
+              background="transparent"
+              minSize={0.6}
+              maxSize={1.4}
+              particleDensity={50}
+              className="w-full h-full"
+              particleColor={isDarkMode ? "#FFFFFF" : "#1d1d1dff"}
+            />
+          </div>
+        )}
 
         {/* Foreground */}
         <nav className="fixed top-0 z-50 h-16 w-full flex justify-between items-center border-b border-gray-400 dark:border-gray-500 px-6 lg:px-64 bg-gray-50 dark:bg-neutral-950">
