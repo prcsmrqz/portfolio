@@ -73,21 +73,16 @@ function App() {
       <div className="relative min-h-screen w-full overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 w-full h-full -z-10">
-          {window.innerWidth < 480 ? (
-            // Static gradient fallback for tiny devices
-            <div className="w-full h-full bg-gradient-to-b from-gray-50 to-gray-200 dark:from-neutral-950 dark:to-neutral-900" />
-          ) : (
-            <SparklesCore
-              id="tsparticlesfullpage"
-              background="transparent"
-              minSize={0.6}
-              maxSize={1.4}
-              particleDensity={density}
-              className="w-full h-full"
-              particleColor={isDarkMode ? "#FFFFFF" : "#5e5e5eff"}
-              fpsLimit={30} // 🚀 Cap FPS for smoothness
-            />
-          )}
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={density}
+            className="w-full h-full"
+            particleColor={isDarkMode ? "#FFFFFF" : "#5e5e5eff"}
+            fpsLimit={30}
+          />
         </div>
 
         {/* Foreground */}
