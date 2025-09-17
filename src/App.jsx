@@ -27,6 +27,22 @@ function App() {
     });
   }, []);
 
+  const [particleSettings, setParticleSettings] = useState({
+    density: window.innerWidth < 768 ? 10 : 50,
+    fps: window.innerWidth < 768 ? 10 : 120,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setParticleSettings({
+        density: window.innerWidth < 768 ? 5 : 50,
+        fps: window.innerWidth < 768 ? 10 : 120,
+      });
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const [loading, setLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
@@ -65,10 +81,10 @@ function App() {
             background="transparent"
             minSize={0.6}
             maxSize={1.4}
-            particleDensity={window.innerWidth < 768 ? 10 : 50}
+            particleDensity={particleSettings.density}
             className="w-full h-full"
             particleColor={isDarkMode ? "#FFFFFF" : "#5e5e5eff"}
-            fpsLimit={window.innerWidth < 768 ? 10 : 120}
+            fpsLimit={particleSettings.fps}
           />
         </div>
 
