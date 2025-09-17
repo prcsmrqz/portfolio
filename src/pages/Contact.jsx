@@ -91,7 +91,7 @@ const Contact = () => {
               target="_blank"
               className="flex items-center gap-4 cursor-pointer hover:underline"
             >
-              <FaGithub className="text-xs sm:text-6xl stroke-1" />
+              <FaGithub className="text-3xl sm:text-6xl stroke-1" />
               <div className="flex flex-col justify-start items-start sm:min-w-[200px]">
                 <h4 className="text-xs sm:text-sm text-gray-700">
                   My Github account.
