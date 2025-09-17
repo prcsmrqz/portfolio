@@ -18,8 +18,13 @@ export const SparklesCore = (props) => {
   } = props;
 
   const [init, setInit] = useState(false);
+  const [density, setDensity] = useState(particleDensity || 80);
 
   useEffect(() => {
+    // Lower density on mobile
+    if (window.innerWidth < 768) {
+      setDensity(30);
+    }
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
@@ -48,49 +53,33 @@ export const SparklesCore = (props) => {
           className={cn("h-full w-full")}
           particlesLoaded={particlesLoaded}
           options={{
-            background: {
-              color: { value: background || "#0d47a1" },
-            },
+            background: { color: { value: background || "transparent" } },
             fullScreen: { enable: false, zIndex: 1 },
-            fpsLimit: 120,
+            fpsLimit: 60, // ⬅️ reduced
             interactivity: {
               events: {
-                onClick: { enable: true, mode: "push" },
-                onHover: { enable: false, mode: "repulse" },
+                onClick: { enable: false }, // ⬅️ disabled
+                onHover: { enable: false },
                 resize: true,
-              },
-              modes: {
-                push: { quantity: 4 },
-                repulse: { distance: 200, duration: 0.4 },
               },
             },
             particles: {
               color: { value: particleColor || "#ffffff" },
               move: {
                 enable: true,
-                direction: "none",
-                random: false,
-                straight: false,
-                speed: { min: 0.1, max: 1 },
+                speed: { min: 0.1, max: 0.6 }, // ⬅️ slower movement
                 outModes: { default: "out" },
               },
               number: {
                 density: { enable: true, width: 400, height: 400 },
-                value: particleDensity || 120,
+                value: density, // ⬅️ dynamic based on device
               },
               opacity: {
-                value: { min: 0.1, max: 1 },
-                animation: {
-                  enable: true,
-                  speed: speed || 4,
-                  sync: false,
-                  startValue: "random",
-                },
+                value: { min: 0.1, max: 0.8 },
+                animation: { enable: true, speed: speed || 2, sync: false },
               },
               shape: { type: "circle" },
-              size: {
-                value: { min: minSize || 1, max: maxSize || 3 },
-              },
+              size: { value: { min: minSize || 0.6, max: maxSize || 1.2 } },
             },
             detectRetina: true,
           }}
