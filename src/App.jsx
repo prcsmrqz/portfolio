@@ -13,18 +13,13 @@ import { SparklesCore } from "@/components/ui/sparkles.jsx";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [density, setDensity] = useState(window.innerWidth < 768 ? 5 : 30);
-  const [loading, setLoading] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
 
-  // Dark mode toggle
   useEffect(() => {
     const root = document.documentElement;
     if (isDarkMode) root.classList.add("dark");
     else root.classList.remove("dark");
   }, [isDarkMode]);
 
-  // AOS animation
   useEffect(() => {
     AOS.init({
       duration: 2000,
@@ -32,7 +27,9 @@ function App() {
     });
   }, []);
 
-  // Preloader fade
+  const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+
   useEffect(() => {
     const timer = setTimeout(() => setFadeOut(true), 2000);
     const remove = setTimeout(() => setLoading(false), 2600);
@@ -41,15 +38,6 @@ function App() {
       clearTimeout(timer);
       clearTimeout(remove);
     };
-  }, []);
-
-  // Adaptive particle density on resize
-  useEffect(() => {
-    const handleResize = () => {
-      setDensity(window.innerWidth < 768 ? 5 : 30);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   if (loading) {
@@ -71,17 +59,16 @@ function App() {
   return (
     <>
       <div className="relative min-h-screen w-full overflow-hidden">
-        {/* Background */}
         <div className="absolute inset-0 w-full h-full -z-10">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
             minSize={0.6}
             maxSize={1.4}
-            particleDensity={density}
+            particleDensity={window.innerWidth < 768 ? 10 : 50}
             className="w-full h-full"
             particleColor={isDarkMode ? "#FFFFFF" : "#5e5e5eff"}
-            fpsLimit={30}
+            fpsLimit={window.innerWidth < 768 ? 10 : 120}
           />
         </div>
 
